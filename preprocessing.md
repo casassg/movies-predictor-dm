@@ -10,6 +10,16 @@
 
 **NOTE**: The missing values correspond to the same values as director_name
 
+## actor_1_name
+* Missing values: 76
+* Missing code: empty field
+
+## actor_1_facebook_likes
+* Missing values: 76
+* Missing code: empty field
+
+**NOTE**: The missing values correspond to the same values as actor_2_name
+
 ## actor_2_name
 * Missing values: 13
 * Missing code: empty field
@@ -31,3 +41,11 @@
 * Missing code: empty field
 
 **NOTE**: The missing values correspond to the same values as actor_3_name
+
+## genres
+* Missing values: 69
+* Missing code: empty field
+
+## gross
+* Missing values: 953
+* Missing code: empty field
