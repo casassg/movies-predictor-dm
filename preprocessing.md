@@ -49,3 +49,20 @@
 ## gross
 * Missing values: 953
 * Missing code: empty field
+
+## color
+* Missing values: 19
+* Missing code: empty field
+
+## Duration
+
+* Missing values: 15
+* Missing code: empty field
+## num_critic_for_reviews
+* Missing values: 50
+* Missing code: empty field
+
+## movie_facebook_likes
+* Missing values: 9
+* Missing code: empty field
+
