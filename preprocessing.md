@@ -66,3 +66,17 @@
 * Missing values: 9
 * Missing code: empty field
 
+## budget
+* Missing values: 486
+* Missing code: empty field
+
+## title_year
+* Missing values: 123
+* Missing code: empty field
+
+## imdb_score
+* Missing values: 0
+
+## aspect_ratio
+* Missing values: 323
+* Missing code: empty field
