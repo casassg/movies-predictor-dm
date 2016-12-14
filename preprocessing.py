@@ -19,13 +19,14 @@ writer.writerow(reader.next()) # header
 
 country = 20
 budget = 22
+imdb_score = 25
 aspect_ratio = 26
 
 def treat_budget(row):
 	if row[budget] != '' and int(row[budget]) > 3e8:
 		old_budget = int(row[budget])
 		new_budget = int(old_budget*currencies[row[country]])
-		print '{} -> {}'.format(old_budget,new_budget)
+		#print '{} -> {}'.format(old_budget,new_budget)
 		row[budget] = new_budget
 
 def treat_aspect_ratio(row):
@@ -33,10 +34,18 @@ def treat_aspect_ratio(row):
 		old_ar = float(row[aspect_ratio])
 		if old_ar == 4: new_ar = 4/3.
 		if old_ar == 16: new_ar = 16/9.
-		print '{} -> {}'.format(old_ar,new_ar)
+		#print '{} -> {}'.format(old_ar,new_ar)
 		row[aspect_ratio] = new_ar
+
+def discretize_score(row,n):
+	old_score = float(row[imdb_score])
+	new_score = int((old_score/10)*n+1)
+	#print '{} -> {}'.format(old_score, new_score)
+	row[imdb_score] = new_score
+
 
 for row in reader:
 	treat_budget(row)
 	treat_aspect_ratio(row)
+	discretize_score(row,5)
 	writer.writerow(row)
