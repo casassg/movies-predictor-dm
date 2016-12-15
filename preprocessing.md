@@ -80,3 +80,23 @@
 ## aspect_ratio
 * Missing values: 323
 * Missing code: empty field
+
+## num_voted_users
+* Mising values: 2
+* Missing code: empty field
+
+## cast_total_facebook_likes
+* Missing values: 2
+* Missing code: empty field
+
+## facenumber_in_poster
+* Missing values: 13
+* Missing code: empty field
+
+## plot_keywords
+* Missing values: 153
+* Missing code: empty field
+
+## movie_imdb_link
+* Missing values: 0
+
