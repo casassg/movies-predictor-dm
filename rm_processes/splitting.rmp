@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="7.3.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="7.3.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="7.3.000" expanded="true" height="68" name="Retrieve" width="90" x="179" y="85">
+        <parameter key="repository_entry" value="//Local Repository/data/movies_clean"/>
+      </operator>
+      <operator activated="true" class="split_data" compatibility="7.3.000" expanded="true" height="103" name="Split Data" width="90" x="447" y="85">
+        <enumeration key="partitions">
+          <parameter key="ratio" value="0.8"/>
+          <parameter key="ratio" value="0.2"/>
+        </enumeration>
+        <parameter key="sampling_type" value="stratified sampling"/>
+        <parameter key="use_local_random_seed" value="false"/>
+        <parameter key="local_random_seed" value="1992"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="7.3.000" expanded="true" height="68" name="Store" width="90" x="648" y="34">
+        <parameter key="repository_entry" value="//Local Repository/data/movies_training"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="7.3.000" expanded="true" height="68" name="Store (2)" width="90" x="648" y="136">
+        <parameter key="repository_entry" value="//Local Repository/data/movies_validation"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="7.3.000" expanded="true" height="82" name="Write CSV (2)" width="90" x="849" y="136">
+        <parameter key="csv_file" value="/home/oscar/Documentos/md/project2/movies-predictor-dm/movies_validation.csv"/>
+        <parameter key="column_separator" value=","/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="7.3.000" expanded="true" height="82" name="Write CSV" width="90" x="849" y="34">
+        <parameter key="csv_file" value="/home/oscar/Documentos/md/project2/movies-predictor-dm/movies_training.csv"/>
+        <parameter key="column_separator" value=","/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="false"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <connect from_op="Retrieve" from_port="output" to_op="Split Data" to_port="example set"/>
+      <connect from_op="Split Data" from_port="partition 1" to_op="Store" to_port="input"/>
+      <connect from_op="Split Data" from_port="partition 2" to_op="Store (2)" to_port="input"/>
+      <connect from_op="Store" from_port="through" to_op="Write CSV" to_port="input"/>
+      <connect from_op="Store (2)" from_port="through" to_op="Write CSV (2)" to_port="input"/>
+      <connect from_op="Write CSV (2)" from_port="through" to_port="result 2"/>
+      <connect from_op="Write CSV" from_port="through" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+    </process>
+  </operator>
+</process>
