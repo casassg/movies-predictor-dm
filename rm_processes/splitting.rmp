@@ -31,7 +31,7 @@
         <parameter key="repository_entry" value="//Local Repository/data/movies_validation"/>
       </operator>
       <operator activated="true" class="write_csv" compatibility="7.3.000" expanded="true" height="82" name="Write CSV (2)" width="90" x="849" y="136">
-        <parameter key="csv_file" value="/home/oscar/Documentos/md/project2/movies-predictor-dm/movies_validation.csv"/>
+        <parameter key="csv_file" value="/home/oscar/Documentos/md/project2/movies-predictor-dm/datasets/movies_validation.csv"/>
         <parameter key="column_separator" value=","/>
         <parameter key="write_attribute_names" value="true"/>
         <parameter key="quote_nominal_values" value="true"/>
@@ -40,7 +40,7 @@
         <parameter key="encoding" value="SYSTEM"/>
       </operator>
       <operator activated="true" class="write_csv" compatibility="7.3.000" expanded="true" height="82" name="Write CSV" width="90" x="849" y="34">
-        <parameter key="csv_file" value="/home/oscar/Documentos/md/project2/movies-predictor-dm/movies_training.csv"/>
+        <parameter key="csv_file" value="/home/oscar/Documentos/md/project2/movies-predictor-dm/datasets/movies_training.csv"/>
         <parameter key="column_separator" value=","/>
         <parameter key="write_attribute_names" value="true"/>
         <parameter key="quote_nominal_values" value="true"/>
