@@ -11,9 +11,9 @@ currencies['Spain'] = 0.00634571 # Spanish peseta
 currencies['China'] = 0.144776 # Chinese yuan
 currencies['Thailand'] = 0.028032 # Thai baht
 
-csvfile = open('movie_metadata.csv','r')
+csvfile = open('../datasets/movie_metadata.csv','r')
 reader = csv.reader(csvfile, delimiter=',', quotechar='\"')
-csvfile = open('movie_metadata_prep.csv','w')
+csvfile = open('../datasets/movie_metadata_prep.csv','w')
 writer = csv.writer(csvfile)
 writer.writerow(reader.next()) # header
 
