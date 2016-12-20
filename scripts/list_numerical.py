@@ -51,6 +51,8 @@ reader = get_reader()
 titles = reader.next()
 [titles.append('plot_'+k) for k in plot]
 [titles.append('genre_'+k) for k in genres]
+print(len(plot))
+print(len(genres))
 
 
 writer.writerow(titles) # header
