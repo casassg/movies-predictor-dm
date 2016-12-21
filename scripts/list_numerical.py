@@ -3,10 +3,10 @@ import csv
 import pprint
 
 def get_reader():
-	csvfile = open('../datasets/movie_metadata_clean_alt.csv','r')
+	csvfile = open('../datasets/movie_metadata_clean.csv','r')
 	return csv.reader(csvfile, delimiter=',', quotechar='\"')
 
-csvfile = open('../datasets/movie_metadata_prenumerical.csv','w')
+csvfile = open('../datasets/movie_metadata_clean_numerical.csv','w')
 writer = csv.writer(csvfile)
 reader = get_reader()
 titles =  reader.next()
