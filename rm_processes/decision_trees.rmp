@@ -282,7 +282,7 @@
           <portSpacing port="sink_result 3" spacing="0"/>
         </process>
       </operator>
-      <operator activated="true" class="retrieve" compatibility="7.3.000" expanded="true" height="68" name="Retrieve all" width="90" x="45" y="238">
+      <operator activated="true" class="retrieve" compatibility="7.3.000" expanded="true" height="68" name="Retrieve training" width="90" x="45" y="238">
         <parameter key="repository_entry" value="//Local Repository/data/movies_clean"/>
       </operator>
       <operator activated="true" class="set_role" compatibility="7.3.000" expanded="true" height="82" name="Set Role (2)" width="90" x="179" y="238">
@@ -346,7 +346,7 @@
       </operator>
       <connect from_op="Retrieve" from_port="output" to_op="Set Role" to_port="example set input"/>
       <connect from_op="Set Role" from_port="example set output" to_op="Optimize Parameters (Grid)" to_port="input 1"/>
-      <connect from_op="Retrieve all" from_port="output" to_op="Set Role (2)" to_port="example set input"/>
+      <connect from_op="Retrieve training" from_port="output" to_op="Set Role (2)" to_port="example set input"/>
       <connect from_op="Set Role (2)" from_port="example set output" to_op="Decision Tree (2)" to_port="training set"/>
       <connect from_op="Decision Tree (2)" from_port="model" to_op="Apply Model (2)" to_port="model"/>
       <connect from_op="Retrieve validation" from_port="output" to_op="Set Role (3)" to_port="example set input"/>
